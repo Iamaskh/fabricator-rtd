@@ -12,11 +12,11 @@ A basic guide and tutorial for both these ways are explained below.
 
    This project is under active development.
 
-Contents
---------
-
 .. toctree::
    prerequisites
+   network-setup
+   tutorial
+   quickstart
 
    
    
