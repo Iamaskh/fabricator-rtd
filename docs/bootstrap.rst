@@ -39,28 +39,28 @@ To read all the help regarding commands use: ./fabric-network.sh help
 
 To start
 
-
 .. code-block:: bash
+    
+    $ ./fabric-network.sh generate-crypto
+	
+    $ ./fabric-network.sh up
 
-        $ ./fabric-network.sh generate-crypto
-
-	$ ./fabric-network.sh up
 
 To bootstrap Org2 from Org1
 
 
+
 .. code-block:: bash
 
-        $ ./fabric-network.sh add-remote-orderer 10
+       $ ./fabric-network.sh add-remote-orderer 10
 
-        In above command 10 refers to orderer number. Since we are bootstrapping Org2's base orderer it is 10, it should be 20 for Org3 and so on..
+	In above command 10 refers to orderer number. Since we are bootstrapping Org2's base orderer it is 10, it should be 20 for Org3 and so on..
 	As a result of this command for base orderer10 a genesis file will be generated in channel-artifacts folder i.e. channel-artifacts/orderer_genesis.pb
 	Next step: Copy the channel-artifacts/orderer_genesis.pb into channel-artifacts/orderer_genesis.pb of the Org2 
 
-        $ ./fabric-network.sh publish-remote-orderer 10
+	$ ./fabric-network.sh publish-remote-orderer 10
 
-	    
-        The above command ensures that the base orderer of Org2 is published and now peers can contact this as an active orderer in the network. 
+	The above command ensures that the base orderer of Org2 is published and now peers can contact this as an active orderer in the network. 
 	This command must be run after the containers of Org2 are up and running
 
 Organization 2
