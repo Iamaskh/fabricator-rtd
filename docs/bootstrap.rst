@@ -1,5 +1,5 @@
 Bootstrap
-=====
+=========
 
 The bootstrap process brings up the required containers for each organization. This bootstrap process for local setup is already done in local-startup.sh script. For bootstrapping network with organizations on separate machines, we have a script remote-startup.sh.
 
@@ -33,7 +33,7 @@ For the basic tutorial on setting up 3 organizations, use the following commands
 This series of commands is an interactive process between the organizations so please follow the instructions in the sequence in which they are numbered.
 
 Organization 1
-###########
+##############
 
 To read all the help regarding commands use: ./fabric-network.sh help
 
@@ -64,7 +64,7 @@ To bootstrap Org2 from Org1
 	This command must be run after the containers of Org2 are up and running
 
 Organization 2
-###########
+##############
 
 To start bootstraping Org2, Copy the shared orderer certificates (OrdererSharedCerts folder) from first organization's channel-artifact folder in Org2 i.e. Org2/OrdererSharedCerts. Once the shared certificates are placed as required run following commands.
 
@@ -101,4 +101,19 @@ To Bootstrap Org3 from Org2
 
 
 Organization 3
-###########       
+##############       
+
+To start bootstraping Org3, Copy the shared orderer certificates (OrdererSharedCerts folder) from first/2nd organization's channel-artifact folder in Org3 i.e. Org3/OrdererSharedCerts. Once the shared certificates are placed as required run following commands.
+
+.. code-block:: bash
+
+      $ ./fabric-network.sh generate-crypto 
+
+	This command generates 2 important files for bootstrapping
+	(1) A json file i.e. ./channel-artifacts/Org3.json that contains the Org3 MSP certificates required to join this Org to any channel at any time
+	(2) A crt file i.e. ./channel-artifacts/orderer20.crt that contains public certificates of Org3's base orderer required to add this base orderer into system channel to bootstrap
+	As a next step copy the ./channel-artifacts/orderer20.crt into channel-artifacts folder of Org2 so that it can bootstrap Org3's base orderer in system channel
+
+In step 8 a genesis file would have been generated in Org2/channel-artifacts/orderer_genesis.pb copy this file to Org3/channel-artifacts/orderer_genesis.pb and then run the following command to start the containers 9. ./fabric-network.sh up
+
+After the containers of Org3 are up, publish it's orderer details by running the command in step 10.
