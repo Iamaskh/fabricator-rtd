@@ -2,6 +2,7 @@ Tutorial
 =====
 
 .. toctree::
+    generate-org-material
     add-orgs
     channels
     add-peers

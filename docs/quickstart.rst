@@ -8,6 +8,5 @@ Each organization joins the channel and deploy chaincode on it. We will make eac
 The containers in this example can be deployed in single machine containing all 3 orgs or 3 distinct machines (1 for each org) which are in the same network.
 
 .. toctree::
-    generate-org-material
     single-machine-orgs
     single-machine-each-org
