@@ -8,4 +8,5 @@ Tutorial
     add-peers
     add-orderers
     chaincode
+    certificates
     cleanup
