@@ -14,9 +14,9 @@ A basic guide and tutorial for both these ways are explained below.
 
 .. toctree::
    prerequisites
-   network-setup
    tutorial
    quickstart
+   command
 
    
    
