@@ -2,7 +2,7 @@ Tutorial
 =====
 
 .. toctree::
-    bootstrap
+    add-orgs
     channels
     add-peers
     add-orderers
