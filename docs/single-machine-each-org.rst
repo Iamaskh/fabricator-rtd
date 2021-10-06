@@ -1,5 +1,6 @@
+##################
 Single machine for each organization (Setting up docker swarm)
-=====
+##################
 
 Now, we are moving forward to part 2 of this tutorial i.e. creation of a multi-machine network.
 

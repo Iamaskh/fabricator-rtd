@@ -1,5 +1,7 @@
+##################
 Channel Creation & Joining
-=====
+##################
+
 
 For the basic tutorial on creating and joining on a channel use the following commands:
 

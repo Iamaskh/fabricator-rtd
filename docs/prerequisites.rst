@@ -1,5 +1,6 @@
+##################
 Prerequisites
-=====
+##################
 
 Fabric Dependencies can be downloaded to start a new fabric network v2.0.1 from scratch using this command:
 

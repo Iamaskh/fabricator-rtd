@@ -1,5 +1,7 @@
+##################
 Single machine for all Organizations
-=====
+##################
+
 
 For single machine we need to open 3 terminals and change directory each terminal in the path of each organization. Then we need to create a bridge network using docker upon which this blockchain would be deployed.
 

@@ -1,5 +1,7 @@
+##################
 Chaincode Deployment & Invocation
-=====
+##################
+
 
 Our chaincode needs to be deployed on the channel by one participant and the others need to approve it before it can be committed. The number of participants whose approval is needed is dependent on the endorsement policy, it could be ANY, MAJORITY or ALL.
 

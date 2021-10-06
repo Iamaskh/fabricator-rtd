@@ -1,5 +1,6 @@
+##################
 Tutorial
-=====
+##################
 
 .. toctree::
     generate-org-material

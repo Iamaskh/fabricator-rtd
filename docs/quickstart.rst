@@ -1,5 +1,6 @@
+##################
 Quickstart
-=====
+##################
 
 Our example includes 3 organizations, each generates their crypto material individually stored in their independent folders (in case of local setup)or in their independent machines (in case of multi-machine setup).
 

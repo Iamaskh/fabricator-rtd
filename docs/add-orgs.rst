@@ -1,5 +1,6 @@
+##################
 Adding organizations
-=========
+##################
 
 The bootstrap process brings up the required containers for each organization. This bootstrap process for local setup is already done in local-startup.sh script. For bootstrapping network with organizations on separate machines, we have a script remote-startup.sh.
 

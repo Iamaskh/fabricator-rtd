@@ -1,5 +1,6 @@
+##################
 Certificate reenrollment & revocation  
-=====
+##################
 A permissioned blockchain requires that an entity, be it a network user (client), an admin, or a network component (peers or orderers), must be identified and permissioned before accessing a consortium network.
 Every entity in the network is granted some digital certificates in order for them to be able to identify themselves as an identity in the network. These digital certificates are generated along with some other
 crypto material. There are two ways to generate crypto materials in Hyperledger Fabric: **Cryptogen and CA (Certificate Authority) Server**.
