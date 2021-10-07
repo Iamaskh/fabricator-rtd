@@ -16,7 +16,7 @@ Feature Highlight
    This project is under active development.
 
 .. toctree::
-   design
+   introduction
    getting-started
    tutorial
    quickstart
