@@ -1,19 +1,23 @@
-Welcome to Fabricator's documentation!
-===================================
-This is effort to create a generic template for a reproducible fabric network, that can be configured for various requirements with minimal effort. Currently it is designed for 3 Organizations and it can be easily scaled to more Organizations. Each Organization has its own containers and can be deployed separately in their own machines. All the services/containers are divided in domains of their parent organization i.e. peer.org1.example.com , peer.org2.example.com etc except for orderers. Because of fabric design the orderers can not be divided in domains and they all belong to their own membership service provider i.e. OrdererMSP. Each organization has reservation of 10 orderers each. In our example Org1 has reservation from 0 to 9, Org2 has reservation from 10 to 19 and Org3 has reservation from 20 to 29 and so on and so forth.
-Orgs have their own base orderer (orderer0. for Org1, orderer1. for Org2 etc). The organizations join the system channel using their respective orderers and can also add their own local orderer nodes (maximum 10).
-Initially each organization has 1 orderer, 2 peers ; More peers and orderers can be dynamically added by following the steps below.
-We have provided demos to play around with this tool in 2 ways:
-Local setup: Setup a local 3 organization network on a single machine.
-Multi-machine setup: Setup a multi-organization network running on separate machines.
-A basic guide and tutorial for both these ways are explained below.
+##################
+Welcome to Fabricator
+##################
 
+**Fabricator** - A tool that provides a scalable generic template for bootstrapping Hyperledger Fabric networks in production environments. It can be configured for various requirements with minimal effort.
+
+*****************
+Feature Highlight
+*****************
+* feature 1
+* feature 2
+* feature 3
+* feature 4
 .. note::
 
    This project is under active development.
 
 .. toctree::
-   prerequisites
+   design
+   getting-started
    tutorial
    quickstart
    command
