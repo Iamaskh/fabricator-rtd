@@ -7,7 +7,14 @@ Our chaincode needs to be deployed on the channel by one participant and the oth
 
 For our example, we are approving via every organization. The chaincode example that is being deployed is fabcar which needs to be present in the chaincode folder inside each organization. This chaincode folder is mounted in docker container.
 
+*****************
+Easy chaincode deployments with CI/CD 
+*****************
+
 For easy chaincode deployments, we have created a script (deploy-chaincode.sh) to easily approve and deploy chaincode. The script has to be run once for each organization (in parallel). Only 1 organization would commit the chaincode (we call this organization COMMITTER_OF_CHAINCODE), all the organizations would only approve. This script was written to be used with Jenkins for chaincode CI/CD but can be used for local/remote installations as well by running the script with appropriate parameters.
+
+
+If you want to do all the steps manually one by one yourself rather than using our script, please skip to the next section.
 
 Please open 3 terminal instances and cd into the folder where we have deploy-chaincode.sh file.
 
@@ -29,7 +36,10 @@ For this example, please run the commands for the 3 orgs like this (either on th
 
 Please make sure that the committer of chaincode is the same in all 3 orgs since this organization would be committing the chaincode, the rest will only approve.
 
-If you want to do all the steps manually one by one, please follow the instructions as they are numbered.
+
+********************************************
+Chaincode install, approve, invoke and query 
+********************************************
 
 To get help regarding the commands use: ./fabric-network.sh help
 
