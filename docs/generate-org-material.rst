@@ -1,7 +1,7 @@
 Generate organizations
 =====
 
-Before we go ahead creating either a local or multi-machine network, we have to first create individual scripts for each organization. To do this easily, we have created a script called generate-org.sh which copies the material from /fabric-template folder (see the code above) and parametrizes it according to each organization.
+Before we go ahead creating either a local or multi-machine network, we have to first create individual scripts for each organization. To do this easily, we have created a script called generate-org.sh which copies the material from the :file:`./fabric-template` folder and parametrizes it according to each organization.
 
 Make sure you are present in the root directory of the repository:
 
@@ -23,7 +23,7 @@ The command to create org material can be run as:
 
     	$ ./generate-org.sh <ORG_NAME> <DOMAIN_NAME> <ORG_NUMBER> <ORG_EXPLORER_PORT>
 		
-After running the above command, all organization directories should be created inside the *generated-orgs* directory:
+After running the above command, all organization directories should be created inside the :file:`./generated-orgs` directory:
 
 .. code-block:: bash
 	
@@ -32,14 +32,14 @@ After running the above command, all organization directories should be created 
 
 
 
-As an example we generate an organization called the *MMS*:
+As an example we generate an organization called the MMS:
 
 .. code-block:: bash
 
         $ ./generate-org.sh MMS t-systems.com 1 7040
 
 
-Therefore you should have created the *MMS* directory along with the organization scripts that looks like this:
+Therefore you should have created the :file:`./MMS` directory along with the organization scripts that looks like this:
 
 .. code-block:: bash
 
