@@ -10,8 +10,8 @@ A detailed documentation about the Fabric CA can be found in `Fabric CA User's G
 
 .. note::
 
-    With respect to the arguments **$identity** and **$identity_no** for the commands given below, an *identity* can be a *user, admin, peer* or an *orderer* for which you may want to reenroll or revoke certificates.
-    Since Fabricator allows you to add as many *users, admins*, new *peers* you may want and up to *10 orderers* dynamically, the *identity_no* is to indicate which *identity* you want
+    With respect to the arguments ``identity`` and ``identity_no`` for the commands given below, an ``identity`` can be a *user, admin, peer* or an *orderer* for which you may want to reenroll or revoke certificates.
+    Since Fabricator allows you to add as many *users, admins*, new *peers* you may want and up to *10 orderers* dynamically, the ``identity_no`` is to indicate which *identity* you want
     to address. For example: *peer 1* or *orderer 6*.
 
 Renew enrollment certificate
@@ -20,7 +20,7 @@ In case if the enrollment certificate has been expired or compromised, it can be
 
 .. code-block:: bash
         
-	    $ ./fabric-network.sh reenroll-certificate $identity $identity_no
+	    $ ./fabric-network.sh reenroll-certificate <identity> <identity_no>
  
 
 Revoke a certificate or identity
@@ -31,7 +31,7 @@ Revoking a certificate will invalidate a single certificate. An identity or a ce
 
 .. code-block:: bash
         
-	    $ ./fabric-network.sh revoke-certificate $identity $identity_no        
+	    $ ./fabric-network.sh revoke-certificate <identity> <identity_no>        
 
 
 .. _Fabric CA User's Guide: https://hyperledger-fabric-ca.readthedocs.io/en/release-1.4/users-guide.html#fabric-ca-user-s-guide

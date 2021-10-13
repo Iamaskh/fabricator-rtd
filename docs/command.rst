@@ -173,5 +173,3 @@ Command-Line
     .. code-block:: bash
       
       ./fabric-network.sh revoke-certificate <identity> <identity_no>
-
->

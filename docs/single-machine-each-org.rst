@@ -33,7 +33,7 @@ This network can be verified at all machines using
 
 	docker network ls
 
-Now that {fabric-template-network} network has been set up at single machine/multiple machines we can bootstrap our fabric network.
+Now that the *fabric-template-network* network has been set up at single machine/multiple machines we can bootstrap our fabric network.
 
 
 
