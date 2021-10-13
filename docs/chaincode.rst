@@ -3,20 +3,20 @@ Chaincode Deployment & Invocation
 ##################
 
 
-Our chaincode needs to be deployed on the channel by one participant and the others need to approve it before it can be committed. The number of participants whose approval is needed is dependent on the endorsement policy, it could be ANY, MAJORITY or ALL.
+Our chaincode needs to be deployed on the channel by one participant and the others need to approve it before it can be committed. The number of participants whose approval is needed is dependent on the endorsement policy, it could be ``ANY``, ``MAJORITY`` or ``ALL``.
 
-For our example, we are approving via every organization. The chaincode example that is being deployed is fabcar which needs to be present in the chaincode folder inside each organization. This chaincode folder is mounted in docker container.
+For our example, we are approving via every organization. The chaincode example that is being deployed is ``fabcar`` which needs to be present in the ``chaincode`` folder inside each organization. This ``chaincode`` folder is mounted in docker container.
 
 *****************
 Easy chaincode deployments with CI/CD 
 *****************
 
-For easy chaincode deployments, we have created a script (deploy-chaincode.sh) to easily approve and deploy chaincode. The script has to be run once for each organization (in parallel). Only 1 organization would commit the chaincode (we call this organization COMMITTER_OF_CHAINCODE), all the organizations would only approve. This script was written to be used with Jenkins for chaincode CI/CD but can be used for local/remote installations as well by running the script with appropriate parameters.
+For easy chaincode deployments, we have created a script (``deploy-chaincode.sh``) to easily approve and deploy chaincode. The script has to be run once for each organization (in parallel). Only 1 organization would commit the chaincode (we call this organization ``COMMITTER_OF_CHAINCODE``), all the organizations would only approve. This script was written to be used with Jenkins for chaincode CI/CD but can be used for local/remote installations as well by running the script with appropriate parameters.
 
 
 If you want to do all the steps manually one by one yourself rather than using our script, please skip to the next section.
 
-Please open 3 terminal instances and cd into the folder where we have deploy-chaincode.sh file.
+Please open 3 terminal instances and cd into the folder where we have ``deploy-chaincode.sh`` file.
 
 
 .. code-block:: bash
@@ -83,6 +83,8 @@ To check commit readiness [OPTIONAL]
 	    $ ./fabric-network.sh checkcommitreadiness-cc channelall fabcar 1 1 json
 
 To commit a chaincode
+
+.. code-block:: bash
 
         $ ./fabric-network.sh commit-cc channelall fabcar 1 1 
 
