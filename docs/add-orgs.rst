@@ -18,10 +18,20 @@ Generate the crypto material for *organization 1* and start it.
 	
     $ ./fabric-network.sh up
 
+.. note::
+
+       Before you bootstrap *organization 2* or any of the following organizations there is something you should know. There is only one *CA* (**Certificate Authority**) for the orderers of all organizations.
+       Crypto material is generated after the **Fabric CA**  for the orderer of the first organization (*organization 1*) runs. This crypto material is generated inside the folder :file:`fabric-orderer-ca` of 
+       *organization 1* and should be copied to each *organization* as the orderers of all organizations need this crypto material in order to register and enroll themselves to the **Orderer CA** so that the required 
+       certificates needed to identify the orderer of each organization can be generated. However, every organizaton has its own **CA** that generates some crypto material stored in the :file:`fabric-org-ca`. This crypto material is used
+       to generate the MSP of each organization. *Peers*, *users* and *admins* of each organization can register and enroll themselves to the running **Organization CA** that generates certificates for them. Since each organization 
+       has its own **CA**, so :file:`fabric-org-ca` folder is present inside each organization at the time it is created.  
+
+
+Copy the :file:`fabric-orderer-ca` folder from the root of *Organization 1* to the root of *Organization 2* and *Organization 3* . Once the crypto material for the orderer certificates is placed as required run following commands.
+
 Organization 2
 ##############
-Bootstrap *organization 2* from *organization 1*, Copy the shared orderer certificates (:file:`OrdererSharedCerts` folder) from first organization's :file:`channel-artifact` folder in *organization 2* i.e. :file:`Org2/OrdererSharedCerts`. Once the shared certificates are placed as required run following commands.
-
 
 .. code-block:: bash
 
@@ -63,8 +73,6 @@ This command must be run after the containers of *organization 2* are up and run
 
 Organization 3
 ##############
-
-To start bootstraping Org3, Copy the shared orderer certificates (:file:`OrdererSharedCerts` folder) from first/2nd organization's :file:`channel-artifact` folder in Org3 i.e. :file:`Org3/OrdererSharedCerts`. Once the shared certificates are placed as required run following commands.
 
 .. code-block:: bash
 
