@@ -5,6 +5,18 @@ Adding organizations
 This is a basic tutorial on setting up 3 organizations, use the following commands: 
 
 
+.. note::
+       The commands to add and publish a remote orderer can be run as given in the example below, where ``<ORDERER_NO>`` is the orderer number of the organization.
+       Please refer to the **Command-Line** Section for more details.
+
+**Example**:
+
+.. code-block:: bash
+      
+      ./fabric-network.sh add-remote-orderer <ORDERER_NO>
+
+      ./fabric-network.sh publish-remote-orderer <ORDERER_NO>
+
 Organization 1
 ##############
 
@@ -48,7 +60,7 @@ As a next step copy the :file:`./channel-artifacts/orderer10.crt` into channel-a
        $ ./fabric-network.sh add-remote-orderer 10
 
 
-In above command 10 refers to *orderer number*. Since we are bootstrapping *Organization 2's base orderer* it is 10, it should be 20 for *organization 3* and so on..
+Since we are bootstrapping *Organization 2's base orderer* it is 10, it should be 20 for *organization 3* and so on..
 As a result of this command for *base orderer 10* a genesis file will be generated in :file:`channel-artifacts` folder i.e. :file:`./channel-artifacts/orderer_genesis.pb` of *organization 1*
 This generates a genesis file would have been generated in :file:`./channel-artifacts/orderer_genesis.pb` copy this file to :file:`./Org2/channel-artifacts/orderer_genesis.pb`. 
 

@@ -10,11 +10,18 @@ To add a new orderer
 
 	$ ./fabric-network.sh add-local-orderer
 
-To join the newer peer to existing channel
+.. note::
 
+	If need be, you can join this newer orderer to the existing channel using the command given below, by changing the orderer number as required.
+
+To join the newer peer to existing channel:
+
+.. code-block:: bash
+
+	./fabric-network.sh join-channel-orderer <ORDERER_NO> <CHANNEL_NAME>
+
+For example if you want join *orderer number 1* to the channel called *channelall*
 
 .. code-block:: bash
     
-	If need be, you can join this newer orderer to the existing using the join-channel-orderer command by changing the orderer <number> as required
-	
 	$ ./fabric-network.sh join-channel-orderer 1 channelall

@@ -8,6 +8,32 @@ This is a basic tutorial on creating and joining on a channel.
 .. note::
 
     This tutorial currently demonstrates an example of 3 organizations. However the same steps shall be followed for up to *N organizations*.
+    The commands to *create and join a channel, add and sign the configuration of another organization* can be run as given below in the example.
+**Example**:
+
+To create a channel:
+
+.. code-block:: bash
+    
+    ./fabric-network.sh create-channel <CHANNEL_PROFILE> <CHANNEL_NAME>
+
+To join a peer to a channel:
+
+.. code-block:: bash
+    
+    ./fabric-network.sh join-channel-peer <PEER_NO> <CHANNEL_NAME>
+
+To add configuration of another organization:
+
+.. code-block:: bash
+    
+    ./fabric-network.sh add-org-config <CHANNEL_NAME> <ORG_TO_BE_ADDED_NAME>
+
+To sign configuration of another organization:
+
+.. code-block:: bash
+
+    ./fabric-network.sh add-org-sign <CHANNEL_NAME> <ORG_TO_BE_SIGNED_NAME>
 
 
 Organization 1

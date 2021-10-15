@@ -10,7 +10,7 @@ A detailed documentation about the Fabric CA can be found in `Fabric CA User's G
 
 .. note::
 
-    With respect to the arguments ``identity`` and ``identity_no`` for the commands given below, an ``identity`` can be a *user, admin, peer* or an *orderer* for which you may want to reenroll or revoke certificates.
+    With respect to the arguments ``<identity>`` and ``<identity_no>`` for the commands given below, an ``identity`` can be a *user, admin, peer* or an *orderer* for which you may want to reenroll or revoke certificates.
     Since Fabricator allows you to add as many *users, admins*, new *peers* you may want and up to *10 orderers* dynamically, the ``identity_no`` is to indicate which *identity* you want
     to address. For example: *peer 1* or *orderer 6*.
 

@@ -46,7 +46,7 @@ Command-Line
 
     .. code-block:: bash
       
-      ./fabric-network.sh join-channel-peer <PEER_NO CHANNEL_NAME>
+      ./fabric-network.sh join-channel-peer <PEER_NO> <CHANNEL_NAME>
   
   7. To add another peer:
 

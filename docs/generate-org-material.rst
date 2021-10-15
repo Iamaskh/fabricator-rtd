@@ -17,7 +17,7 @@ Make sure you are present in the root directory of the repository:
     		└── ./blockchain-common-fabric-net/remote-startup.sh
 
 
-The command to create org material can be run as:
+The command to create organization material can be run as:
 
 .. code-block:: bash
 
