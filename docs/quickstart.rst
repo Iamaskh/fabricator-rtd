@@ -11,3 +11,4 @@ The containers in this example can be deployed in single machine containing all 
 .. toctree::
     single-machine-orgs
     single-machine-each-org
+    easy-chaincode
