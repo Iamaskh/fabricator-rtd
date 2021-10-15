@@ -63,6 +63,10 @@ Therefore you should have created the :file:`./MMS` directory along with the org
 		└── generated-orgs/MMS/scripts
 
 
-You can create as many organizations you want in the similar fashion as mentioned above. 
-Run the above command for each organization (either in the same machine or in separate machines). This command would also download and resolve dependencies if not done already. For more information on dependencies, see the next section.        
- 
+You can create as many organizations you want in the similar fashion as mentioned above.  
+
+.. note::
+
+	Once organzations have been generated, each organization can be manipulated using the :file:`fabric-network.sh` script present inside each
+	organzation folder as shown in the example above for the organization called **MMS**.
+
