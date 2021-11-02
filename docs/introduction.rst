@@ -1,12 +1,19 @@
 ##################
 Introduction
 ##################
-
+The Hyperledger Fabric network can get too complicated to set up and scale. 
+Organizations that want to participate in a consortium or in a permissioned network generally would want that 
+bootstrapping and managing such a network should be a simple and hassle-free task. They would want to bring up
+the network and its components without understanding and being involved in depth of the technical details.
+Fabricator enables this.   
 
 *****************
 What is Fabricator?
 *****************
-
+Fabricator can setup and bootstrap the fabric network, bring up organizations and make them join the network with just a single command.
+It provides a generic template that contains script that are tailored in a way which makes it simple for organizations to configure
+the network according to their own needs. It enables scaling a running fabric network by allowing the dynamic addition of new network components, users and organizations.
+It is well suited for production environments since it uses the Fabric-CA server for certificate generation, rotation and revocation.   
 
 *****************
 How does fabricator works?
