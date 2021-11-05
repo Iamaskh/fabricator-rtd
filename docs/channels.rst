@@ -36,6 +36,95 @@ To sign configuration of another organization:
     ./fabric-network.sh add-org-sign <CHANNEL_NAME> <ORG_TO_BE_SIGNED_NAME>
 
 
+Build channel configuration via configtx.yaml
+##############
+A channel is created by building a channel transaction that specifies the initial configuration of the channel.
+The channel configuration has the information about the channel members(organizations), ordering nodes that can add new blocks 
+to the channel and the policies that govern the channel updates.
+A channel is created by using the ``configtx.yaml`` file and the ``configtxgen`` tool.
+The ``configtx.yaml`` file contains the information that is required to build the channel configuration.
+The ``configtxgen`` tool reads the information in the ``configtx.yaml`` file and writes it in a special format that can be read by Fabric. 
+In a channel, changes and updates are need to be approved by majority of channel members(organizations). 
+How this approval would take place is in the policies defined inside the channel section of the ``configtx.yaml``.
+As it can be seen above that we use the argument ``<CHANNEL_PROFILE>`` and ``<CHANNEL_NAME>`` in the commands to create and join a channel
+and to add a new channel member(organization) to the channel. The channel profiles are read by the ``configtxgen`` to build a channel configuration.
+Each profile uses YAML syntax to gather data from other sections of the file. The configtxgen tool uses this configuration to create a channel creation
+transaction for an applications channel, or to write the channel genesis block for a system channel.
+
+A detailed documentation about the chanel configration using ``configtx.yaml`` file and the ``configtxgen`` tool.
+can be found `here <https://hyperledger-fabric.readthedocs.io/en/release-2.2/create_channel/create_channel_config.html#using-configtx-yaml-to-build-a-channel-configuration>`__.
+
+As shown below, we define and use a channel profile called ``ChannelAll``.      
+
+
+.. code-block:: bash
+
+    Channel: &ChannelDefaults
+        Policies:
+            Readers:
+                Type: ImplicitMeta
+                Rule: "ANY Readers"
+            Writers:
+                Type: ImplicitMeta
+                Rule: "ANY Writers"
+            Admins:
+                Type: ImplicitMeta
+                Rule: "MAJORITY Admins"
+        Capabilities:
+            <<: *ChannelCapabilities
+
+    Profiles:
+
+        OrdererGenesis:
+            <<: *ChannelDefaults
+            Orderer:
+                <<: *OrdererDefaults
+                OrdererType: etcdraft
+                EtcdRaft:
+                    Consenters:
+                    - Host: orderer0.t-systems.com
+                    Port: 7050
+                    ClientTLSCert: crypto-config/ordererOrganizations/t-systems.com/orderers/orderer0.t-systems.com/tls/server.crt
+                    ServerTLSCert: crypto-config/ordererOrganizations/t-systems.com/orderers/orderer0.t-systems.com/tls/server.crt
+                Addresses:
+                    - orderer0.t-systems.com:7050
+                Organizations:
+                - *OrdererOrg
+                Capabilities:
+                    <<: *OrdererCapabilities
+            Consortiums:
+                BaseConsortium:
+                    Organizations:
+                        - *MMS
+        ChannelAll:
+            Consortium: BaseConsortium
+            <<: *ChannelDefaults
+            Capabilities:
+                <<: *ChannelCapabilities
+            Orderer:
+                <<: *OrdererDefaults
+                OrdererType: etcdraft
+                EtcdRaft:
+                    Consenters:
+                    - Host: orderer0.t-systems.com
+                    Port: 7050
+                    ClientTLSCert: crypto-config/ordererOrganizations/t-systems.com/orderers/orderer0.t-systems.com/tls/server.crt
+                    ServerTLSCert: crypto-config/ordererOrganizations/t-systems.com/orderers/orderer0.t-systems.com/tls/server.crt
+                Addresses:
+                    - orderer0.t-systems.com:7050
+                Organizations:
+                - *OrdererOrg
+                Capabilities:
+                    <<: *OrdererCapabilities
+            Application:
+                <<: *ApplicationDefaults
+                Organizations:
+                    - *MMS
+                Capabilities:
+                    <<: *ApplicationCapabilities
+
+
+
 Organization 1
 ##############
 
