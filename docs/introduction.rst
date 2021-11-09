@@ -35,6 +35,9 @@ Therefore, there is a CA Server container running for every organization and sho
 For example for an ``organization 1`` we have the `organization CA Server` container called ``ca-org.organization1.t-systems.com``.
 Since in our current tutorial is for 3 organizations, this means there are 3 CA's for 3 organizations in a similar fashion as described above.   
 
+=================
+General design
+=================
 Each organization has its own containers and can be deployed separately in their own machines. All the services/containers are divided in domains of their parent organization i.e. ``peer.org1.example.com`` , ``peer.org2.example.com`` etc except for orderers. Because of fabric design the orderers can not be divided in domains and they all belong to their own membership service provider i.e. OrdererMSP. Each organization has reservation of 10 orderers each. In our example Org1 has reservation from 0 to 9, Org2 has reservation from 10 to 19 and Org3 has reservation from 20 to 29 and so on and so forth.
 Orgs have their own base orderer (orderer0. for Org1, orderer1. for Org2 etc). The organizations join the system channel using their respective orderers and can also add their own local orderer nodes (maximum 10).
 Initially each organization has 1 orderer, 2 peers ; More peers and orderers can be dynamically added by following the steps below.
